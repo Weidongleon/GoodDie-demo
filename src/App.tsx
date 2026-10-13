@@ -81,7 +81,7 @@ function useFit() {
       const isWide = w >= 980
       setWide(isWide)
       const availW = isWide ? w - 420 : w
-      const pad = w < 430 ? 0 : 48
+      const pad = w < 430 ? 32 : 48
       setScale(Math.min(1, (availW - pad) / 393, (h - pad) / 852))
     }
     fit()
