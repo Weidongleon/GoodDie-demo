@@ -24,7 +24,8 @@ type SealProps = {
   className?: string
 }
 
-/** Flower-shaped seal (今 / 记 / 望 / 留 / 收), rebuilt from the Figma mask structure. */
+/** Flower-shaped seal (今 / 记 / 望 / 留 / 收), rebuilt from the Figma mask structure.
+ *  The glyph's stroke only rounds the carved corners: it is the 200-unit master's 2.8 scaled to this 40-unit box. */
 export function Seal({ name, tone = 'colored', size = 40, className }: SealProps) {
   const id = useId().replace(/:/g, '')
   const body = tone === 'colored' ? SEAL_COLORS[name].body : tone === 'mono' ? SEAL_MONO : SEAL_REVERSE
@@ -42,7 +43,7 @@ export function Seal({ name, tone = 'colored', size = 40, className }: SealProps
         {PETALS.map((d) => (
           <path key={d} d={d} fill="white" />
         ))}
-        <path d={GLYPHS[name]} fill="black" stroke="black" strokeWidth="2.8" strokeLinejoin="round" />
+        <path d={GLYPHS[name]} fill="black" stroke="black" strokeWidth="0.56" strokeLinejoin="round" />
       </mask>
       <g mask={`url(#${id}-b)`}>
         <path d="M40 0H0V40H40V0Z" fill={body} />
@@ -65,7 +66,8 @@ export function Seal({ name, tone = 'colored', size = 40, className }: SealProps
   )
 }
 
-/** 善终 square brand seal. `reverse` is the night (夜) variant. */
+/** 善终 square brand seal. `reverse` is the night (夜) variant.
+ *  Glyph stroke = the 200-unit master's 2.4 scaled to the 40-unit box; a thicker stroke swells the characters into blobs. */
 export function MainSeal({ reverse = false, size = 40, className }: { reverse?: boolean; size?: number; className?: string }) {
   const id = useId().replace(/:/g, '')
   const c = reverse ? MAIN_COLORS.reverse : MAIN_COLORS.main
@@ -86,7 +88,7 @@ export function MainSeal({ reverse = false, size = 40, className }: { reverse?: 
           <path key={d} d={d} fill="black" />
         ))}
         <path d={MAIN_BLOSSOM_RING} fill="white" />
-        <path d={MAIN_GLYPH} fill="black" stroke="black" strokeWidth="2.4" strokeLinejoin="round" />
+        <path d={MAIN_GLYPH} fill="black" stroke="black" strokeWidth="0.48" strokeLinejoin="round" />
         {MAIN_SEAL_DOTS.map((d) => (
           <path key={d} d={d} fill="black" />
         ))}
