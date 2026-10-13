@@ -1,0 +1,213 @@
+@import 'tailwindcss';
+
+/* GoodDie tokens — mirrors the Figma variable collections
+   "GoodDie / 原色" (raw palette) and "GoodDie / 晨与夜" (晨 = morning, 夜 = night). */
+:root {
+  --gd-paper: #fbf4e8;
+  --gd-raised: #fffbf4;
+  --gd-sunk: #f3e7d2;
+  --gd-line: #e3d1b2;
+  --gd-ink: #2b2017;
+  --gd-muted: #6b5841;
+  --gd-on-gold: #2b2017;
+  --gd-gold: #e8a13c;
+  --gd-gold-ink: #8f4e10;
+  --gd-gold-soft: #f8e4bf;
+  --gd-blossom: #f2b6c0;
+  --gd-blossom-ink: #a8344f;
+  --gd-blossom-soft: #fbe3e6;
+  --gd-sky: #6fb3bf;
+  --gd-sky-ink: #2c6772;
+  --gd-sky-soft: #dceef0;
+  --gd-sage: #8fb38a;
+  --gd-sage-ink: #46693f;
+  --gd-sage-soft: #e3eedc;
+  --gd-lilac: #9a86c0;
+  --gd-lilac-ink: #5e4a8a;
+  --gd-lilac-soft: #ece6f5;
+  --gd-coral: #e8795a;
+  --gd-coral-ink: #a8401f;
+  --gd-coral-soft: #fbe0d6;
+  /* Paper fade under scene headers */
+  --gd-paper-rgb: 251, 244, 232;
+}
+
+[data-theme='night'] {
+  --gd-paper: #14213a;
+  --gd-raised: #1c2c47;
+  --gd-sunk: #0f1a2e;
+  --gd-line: #33496c;
+  --gd-ink: #f4e9d8;
+  --gd-muted: #bba88c;
+  --gd-gold-ink: #f8e4bf;
+  --gd-gold-soft: #1c2c47;
+  --gd-blossom-ink: #fbe3e6;
+  --gd-blossom-soft: #1c2c47;
+  --gd-sky-ink: #dceef0;
+  --gd-sky-soft: #1c2c47;
+  --gd-sage-ink: #e3eedc;
+  --gd-sage-soft: #1c2c47;
+  --gd-lilac-ink: #ece6f5;
+  --gd-lilac-soft: #1c2c47;
+  --gd-coral-ink: #fbe0d6;
+  --gd-coral-soft: #1c2c47;
+  --gd-paper-rgb: 20, 33, 58;
+}
+
+@theme inline {
+  --color-paper: var(--gd-paper);
+  --color-raised: var(--gd-raised);
+  --color-sunk: var(--gd-sunk);
+  --color-line: var(--gd-line);
+  --color-ink: var(--gd-ink);
+  --color-muted: var(--gd-muted);
+  --color-on-gold: var(--gd-on-gold);
+  --color-gold: var(--gd-gold);
+  --color-gold-ink: var(--gd-gold-ink);
+  --color-gold-soft: var(--gd-gold-soft);
+  --color-blossom: var(--gd-blossom);
+  --color-blossom-ink: var(--gd-blossom-ink);
+  --color-blossom-soft: var(--gd-blossom-soft);
+  --color-sky: var(--gd-sky);
+  --color-sky-ink: var(--gd-sky-ink);
+  --color-sky-soft: var(--gd-sky-soft);
+  --color-sage: var(--gd-sage);
+  --color-sage-ink: var(--gd-sage-ink);
+  --color-sage-soft: var(--gd-sage-soft);
+  --color-lilac: var(--gd-lilac);
+  --color-lilac-ink: var(--gd-lilac-ink);
+  --color-lilac-soft: var(--gd-lilac-soft);
+  --color-coral: var(--gd-coral);
+  --color-coral-ink: var(--gd-coral-ink);
+  --color-coral-soft: var(--gd-coral-soft);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  --font-sans: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-serif: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  --font-latin: 'Jost', 'Noto Sans SC', system-ui, sans-serif;
+  --font-italic: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Text styles from the Figma file (GoodDie / *) */
+@utility t-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+}
+@utility t-heading {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+@utility t-entry {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 30px;
+}
+@utility t-latin {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+}
+@utility t-overline {
+  font-family: var(--font-latin);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1.44px;
+}
+@utility t-numeral {
+  font-family: var(--font-latin);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+}
+@utility t-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+}
+@utility t-ui {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+@utility t-caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #e9dcc6;
+  color: var(--gd-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes gd-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.gd-rise {
+  animation: gd-rise 280ms ease-out both;
+}
+
+@keyframes gd-stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.35) rotate(-8deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.94) rotate(2deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+.gd-stamp {
+  animation: gd-stamp 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gd-rise,
+  .gd-stamp {
+    animation: none;
+  }
+}
+
+.gd-scroll {
+  scrollbar-width: none;
+}
+.gd-scroll::-webkit-scrollbar {
+  display: none;
+}
