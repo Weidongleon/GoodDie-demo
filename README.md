@@ -6,6 +6,9 @@ A clickable, live implementation of the Figma design
 [Good Die Demo App Figma Make file](https://www.figma.com/make/1l5V3BUmP53giQmR9maj6J/Good-Die-Demo-App):
 React 19 + Vite + Tailwind CSS v4 + TypeScript.
 
+**Live demo:** https://weidongleon.github.io/GoodDie-demo/ (deployed from `main` by
+`.github/workflows/deploy.yml`; enable once under Settings → Pages → Source: GitHub Actions).
+
 ## Run it
 
 ```bash
